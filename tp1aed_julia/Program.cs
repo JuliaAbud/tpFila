@@ -25,10 +25,13 @@ namespace tp1aed_julia
                 switch (choice)
                 {
                     case 1:
-                        if(!fila.filaVazia())
+                        Console.Clear();
+                        if (!fila.filaVazia())
                         {
                             Cliente emAtendimento = fila.obterPrimeiro();
                             emAtendimento.atendimento--;
+                            Console.WriteLine(emAtendimento.atendimento);
+                            Console.ReadLine();
                         }
                         int numClientes = random.Next(0, 3);
                         for (int i = 0; i < numClientes; i++)

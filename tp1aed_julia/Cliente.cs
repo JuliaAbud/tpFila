@@ -31,8 +31,9 @@ namespace tp1aed_julia
         public static int counterClientes;
 
         public Cliente()
-        {
+        { 
             id = counterClientes;
+            counterClientes++;
             Random tempAtendimento = new Random();
             atendimento = tempAtendimento.Next(2, 7);
         }
