@@ -77,17 +77,29 @@ namespace tp1aed_julia
             {
                 if (counterEnfileirados % 2 == 0)
                 {
-                    par.enfileirar(obterPrimeiro());
+                    enfileirarPar(obterPrimeiro(), par);
                     desenfileirar();
                 }
                 else
                 {
-                    impar.enfileirar(obterPrimeiro());
+                    enfileirarImpar(obterPrimeiro(), impar); ;
                     desenfileirar();
                 }
             }
-
+            frente.proximo = impar.frente.proximo;
+            counterEnfileirados = impar.counterEnfileirados;
             return par;
+        }
+
+        public FilaClientes enfileirarPar (Cliente aux, FilaClientes par)
+        {
+            par.enfileirar(aux);
+            return par;
+        } 
+        public FilaClientes enfileirarImpar (Cliente aux, FilaClientes impar)
+        {
+            impar.enfileirar(aux);
+            return impar;
         }
     }
 }
